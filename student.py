@@ -76,7 +76,7 @@ class GoPiggy(pigo.Pigo):
             self.servo(140)
             self.encL(3)
             self.encR(36)
-            self.encF(3)
+            self.encF(10)
             self.encL(36)
             self.servo(30)
             self.encR(3)
