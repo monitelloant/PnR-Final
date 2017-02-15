@@ -16,7 +16,7 @@ class GoPiggy(pigo.Pigo):
     def __init__(self):
         print("Your piggy has be instantiated!")
         # Our servo turns the sensor. What angle of the servo( ) method sets it straight?
-        self.MIDPOINT = 90
+        self.MIDPOINT = 80
         # YOU DECIDE: How close can an object get (cm) before we have to stop?
         self.STOP_DIST = 30
         # YOU DECIDE: What left motor power helps straighten your fwd()?
@@ -71,6 +71,13 @@ class GoPiggy(pigo.Pigo):
     def shimmy(self):
         print('shimmy')
         for x in range(3):
+            self.servo(30)
+            self.encR(3)
+            self.servo(140)
+            self.encL(3)
+            self.encR(36)
+            self.encF(3)
+            self.encL(360)
             self.servo(30)
             self.encR(3)
             self.servo(140)
