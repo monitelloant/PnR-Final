@@ -92,7 +92,6 @@ class GoPiggy(pigo.Pigo):
             self.encR(72)
             self.servo(140)
             self.encL(72)
-            self.encF(30)
             self.servo(140)
     def head_shake(self):
         print('head_shake')
