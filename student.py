@@ -1,3 +1,4 @@
+from gopigo import *
 import pigo
 import time
 import random
@@ -68,7 +69,7 @@ class GoPiggy(pigo.Pigo):
         self.twist()
         self.head_shake()
         self.twist()
-        # self.back_it_up()
+        self.flash_crowd()
 
     def shimmy(self):
         print('shimmy')
@@ -101,7 +102,11 @@ class GoPiggy(pigo.Pigo):
             self.servo(30)
             self.servo(150)
         self.servo(self.MIDPOINT)
-
+    def flash_crowd(self):
+        print('flash_crowd')
+        for x in range(4):
+            led_on(30)
+            len_off(30)
 
     ########################
     ### MAIN LOGIC LOOP - the core algorithm of my navigation
