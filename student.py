@@ -106,7 +106,7 @@ class GoPiggy(pigo.Pigo):
         print('flash_crowd')
         for x in range(4):
             led_on(30)
-            len_off(30)
+            led_off(30)
 
     ########################
     ### MAIN LOGIC LOOP - the core algorithm of my navigation
