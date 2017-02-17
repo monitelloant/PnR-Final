@@ -64,8 +64,8 @@ class GoPiggy(pigo.Pigo):
         print("Piggy dance")
         ##### WRITE YOUR FIRST PROJECT HERE
         self.shimmy()
-        # self.duggy()
-        # self.sprinkler()
+        self.twist()
+        self.head_shake()
         # self.back_it_up()
 
     def shimmy(self):
@@ -77,15 +77,28 @@ class GoPiggy(pigo.Pigo):
             self.encR(3)
             self.encL(3)
             self.encR(3)
+            self.servo(30)
+            self.servo(150)
             self.encL(3)
             self.encR(3)
             self.encL(3)
+    def twist(self):
+        print('twist')
+        for x in range(1):
             self.encF(30)
             self.encR(72)
             self.servo(140)
             self.encL(72)
             self.encF(30)
             self.servo(140)
+    def head_shake(self):
+        print('head_shake')
+        for x in range(1)
+            self.servo(30)
+            self.servo(150)
+            self.servo(30)
+            self.servo(150)
+        self.servo(self.MIDPOINT)
 
 
 
