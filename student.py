@@ -72,14 +72,16 @@ class GoPiggy(pigo.Pigo):
         print('shimmy')
         for x in range(3):
             self.servo(30)
-            self.encR(3)
+            self.encR(72)
             self.servo(140)
-            self.encL(3)
+            self.encL(72)
+            self.encF(30)
             self.encR(72)
             self.encF(10)
             self.encL(72)
             self.servo(30)
             self.encR(3)
+            self.encF(30)
             self.servo(140)
             self.encL(3)
 
