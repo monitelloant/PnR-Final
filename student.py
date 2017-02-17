@@ -64,13 +64,13 @@ class GoPiggy(pigo.Pigo):
         print("Piggy dance")
         ##### WRITE YOUR FIRST PROJECT HERE
         self.shimmy()
-        self.duggy()
+        # self.duggy()
         # self.sprinkler()
         # self.back_it_up()
 
     def shimmy(self):
         print('shimmy')
-        for x in range(3):
+        for x in range(2):
             self.servo(30)
             self.encR(72)
             self.servo(140)
