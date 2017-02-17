@@ -93,7 +93,7 @@ class GoPiggy(pigo.Pigo):
             self.servo(140)
     def head_shake(self):
         print('head_shake')
-        for x in range(1)
+        for x in range(1):
             self.servo(30)
             self.servo(150)
             self.servo(30)
