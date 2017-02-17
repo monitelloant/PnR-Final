@@ -82,6 +82,7 @@ class GoPiggy(pigo.Pigo):
             self.encL(3)
             self.encR(3)
             self.encL(3)
+        self.servo(self.MIDPOINT)
     def twist(self):
         print('twist')
         for x in range(1):
