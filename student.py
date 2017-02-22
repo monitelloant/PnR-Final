@@ -77,6 +77,7 @@ class GoPiggy(pigo.Pigo):
         self.twist()
         self.head_shake()
         self.twist()
+        self.moonwalk()
         self.flash_crowd()
 
     def shimmy(self):
@@ -97,7 +98,6 @@ class GoPiggy(pigo.Pigo):
     def twist(self):
         print('twist')
         for x in range(1):
-            self.encF(30)
             self.encR(72)
             self.servo(140)
             self.encL(72)
@@ -115,6 +115,13 @@ class GoPiggy(pigo.Pigo):
         for x in range(4):
             led_on(30)
             led_off(30)
+    def moonwalk(self):
+        print('moonwalk')
+        for x in range(4):
+            self.encL(20)
+            self.encB(10)
+            self.encR(20)
+
 
     ########################
     ### MAIN LOGIC LOOP - the core algorithm of my navigation
