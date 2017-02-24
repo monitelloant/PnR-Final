@@ -157,11 +157,11 @@ class GoPiggy(pigo.Pigo):
         # this is the loop part of the "main logic loop"
 
     def encR(self, enc):
-        super().encR(enc)
+        super(self).encR(enc)
         self.turn_track += enc
 
     def encL(self, enc):
-        super().encL(enc)
+        super(self).encL(enc)
         self.turn_track -= enc
 
 
