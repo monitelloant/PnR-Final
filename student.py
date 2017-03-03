@@ -50,6 +50,7 @@ class GoPiggy(pigo.Pigo):
                 "d": ("Dance", self.dance),
                 "c": ("Calibrate", self.calibrate),
                 "t": ("Turn test", self.turn_test),
+                "w": ("Total obstacles", self.total_obstacles),
                 "o": ("Count obstacle", self.count_obstacles),
                 "s": ("Check status", self.status),
                 "q": ("Quit", quit)
@@ -105,6 +106,18 @@ class GoPiggy(pigo.Pigo):
             else:
                 break
         self.restore_heading()
+
+    def total_obstacles(self):
+        counter = 0
+        counter += self.count_obstacles
+        # turn your robot
+        for y in range(3):
+            for x in range(self.MIDPOINT - 60, self.MIDPOINT + 60, 2):
+                self.servo(x)
+                if self.dist() < 30:
+                    print("AAAAAHHHH")
+                    return
+            self.encR(7)
 
     def restore_heading(self):
         print("Now I'll turn back to the starting position")
