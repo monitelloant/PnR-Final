@@ -208,7 +208,7 @@ class GoPiggy(pigo.Pigo):
             if answer == "left":
                 self.encL(6)
             elif answer == "right":
-            self.encR()
+                self.encR()
 
     def cruise(self):
         self.fwd() # I added this to pigo
