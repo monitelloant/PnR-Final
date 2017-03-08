@@ -109,15 +109,12 @@ class GoPiggy(pigo.Pigo):
 
     def total_obstacles(self):
         counter = 0
-        counter += self.count_obstacles
+        for x in range(4):
+            counter += self.count_obstacles()
+            self.encR(9)
+        print('Total number of obstacles: ' + str(counter))
         # turn your robot
-        for y in range(3):
-            for x in range(self.MIDPOINT - 60, self.MIDPOINT + 60, 2):
-                self.servo(x)
-                if self.dist() < 30:
-                    print("AAAAAHHHH")
-                    return
-            self.encR(7)
+
 
     def restore_heading(self):
         print("Now I'll turn back to the starting position")
@@ -204,6 +201,22 @@ class GoPiggy(pigo.Pigo):
         print("[ Press CTRL + C to stop me, then run stop.py ]\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         # this is the loop part of the "main logic loop"
+        while True:
+            if self.is_clear():
+                self.cruise()
+            answer = self.choose_path()
+            if answer == "left":
+                self.encL(6)
+            elif answer == "right":
+            self.encR()
+
+    def cruise(self):
+        self.fwd() # I added this to pigo
+        while self.is_clear():
+            time.sleep(.1) # DANGER: THIS CHECK IS TOO SLOW
+        self.stop()
+        self.encB(3)
+
 
     def encR(self, enc):
         pigo.Pigo.encR(self, enc)
