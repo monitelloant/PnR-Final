@@ -203,16 +203,14 @@ class GoPiggy(pigo.Pigo):
         # this is the loop part of the "main logic loop"
         while True:
             if self.is_clear():
-                self.cruise()
+                self.encF(10)
+            self.restore_heading()
             answer = self.choose_path()
             if answer == "left":
                 self.encL(6)
             elif answer == "right":
-                self.encR()
+                self.encR(6)
 
-    def cruise(self):
-        while self.is_clear():
-            self.encF(10)
 
 
 
@@ -238,4 +236,8 @@ def quit():
 ##################################################################
 ######## The app starts right here when we instantiate our GoPiggy
 
-g = GoPiggy()
+try:
+    g = GoPiggy()
+except (KeyboardInterrupt, SystemExit):
+    from gopigo import *
+    stop()
