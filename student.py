@@ -211,11 +211,9 @@ class GoPiggy(pigo.Pigo):
                 self.encR()
 
     def cruise(self):
-        self.fwd() # I added this to pigo
         while self.is_clear():
-            time.sleep(.1) # DANGER: THIS CHECK IS TOO SLOW
-        self.stop()
-        self.encB(3)
+            self.encF(10)
+
 
 
     def encR(self, enc):
