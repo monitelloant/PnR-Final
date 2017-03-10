@@ -46,7 +46,7 @@ class GoPiggy(pigo.Pigo):
     def menu(self):
         ## This is a DICTIONARY, it's a list with custom index values
         # You may change the menu if you'd like to add an experimental method
-        menu = {"n": ("Navigate forward", self.nav),
+        menu = {"n": ("Navigate forward", self.final),
                 "d": ("Dance", self.dance),
                 "c": ("Calibrate", self.calibrate),
                 "t": ("Turn test", self.turn_test),
