@@ -202,7 +202,7 @@ class GoPiggy(pigo.Pigo):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         # this is the loop part of the "main logic loop"
         while True:
-            if self.is_clear():
+            while self.is_clear():
                 self.encF(10)
             self.restore_heading()
             answer = self.choose_path()
@@ -210,7 +210,6 @@ class GoPiggy(pigo.Pigo):
                 self.encL(6)
             elif answer == "right":
                 self.encR(6)
-
 
 
 
